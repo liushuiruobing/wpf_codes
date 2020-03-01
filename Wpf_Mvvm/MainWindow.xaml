@@ -6,5 +6,25 @@
         xmlns:local="clr-namespace:Wpf_Mvvm"
         mc:Ignorable="d"
         Title="MVVM测试" Height="350" Width="525">
-    <Grid/>
+
+    <Window.DataContext>
+        <local:NameViewModel/>
+    </Window.DataContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <TextBlock x:Name="textBlock" Margin="20"  TextWrapping="Wrap" Text="用户名：" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock x:Name="textBlock_UserName" Margin="20" TextWrapping="Wrap" Text="{Binding UserName}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock x:Name="textBlock2" Margin="20" TextWrapping="Wrap" Text="公司：" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock x:Name="textBlock_Company" Margin="20" TextWrapping="Wrap" Text="{Binding CompanyName}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Button x:Name="button_Update" Content="更新" Command="{Binding UpdateName}" HorizontalAlignment="Right" Margin="20,17,0,17.6" VerticalAlignment="Center" Width="75" />
+
+
+        </StackPanel>
+    </Grid>
 </Window>

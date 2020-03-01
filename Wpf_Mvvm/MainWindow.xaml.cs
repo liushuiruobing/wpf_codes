@@ -20,9 +20,13 @@ namespace Wpf_Mvvm
     /// </summary>
     public partial class MainWindow : Window
     {
+        public NameViewModel _nameViewModel;
+
         public MainWindow()
         {
             InitializeComponent();
+
+            _nameViewModel = base.DataContext as NameViewModel;
         }
     }
 }
